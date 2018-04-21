@@ -32,8 +32,8 @@
 //     </div>
 // </div>
 function createSliderItem(hinhAnh, alt, price, link, name, mark) {
-    var result = 
-    `<!-- Slider Item -->
+    var result =
+        `<!-- Slider Item -->
     <div class="arrivals_slider_item">
     <div class="border_active"></div>
     <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
@@ -65,22 +65,40 @@ function createSliderItem(hinhAnh, alt, price, link, name, mark) {
                     </ul>
                 </div>
             </div>`;
-            return result;
+    return result;
 }
 function getTextFromFile(file, callback) {
     var allText;
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4) {
+            if (rawFile.status === 200 || rawFile.status == 0) {
                 allText = rawFile.responseText;
                 callback(allText);
             }
         }
     }
-    rawFile.send(null);   
+    rawFile.send(null);
+}
+function createSliderContent(jsonFile, mark, callback) {
+    getTextFromFile(jsonFile, function (text) {
+        var json = JSON.parse(text);
+        var html = "";
+        for (var i = 0; i < 10; i++) {
+            var hinhAnh, ten, giaBan, urlXe;
+            try {
+                hinhAnh = json[i].hinhAnh;
+                ten = json[i].ten;
+                giaBan = json[i].giaBan;
+                urlXe = json[i].urlXe;
+            }
+            catch (err) {
+            }
+            var s = createSliderItem("carsdata" + hinhAnh, ten
+                , "$" + giaBan, urlXe, ten, mark);
+            html += s;
+        }
+        callback(html);
+    });
 }

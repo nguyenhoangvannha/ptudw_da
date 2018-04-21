@@ -629,27 +629,9 @@
 
 										<div id="slider01" class="arrivals_slider slider">
 											<script>
-												
 													var link = "/carsdata/" + indexJson[6];
-													getTextFromFile(link, function (text) {
-														var json;
-														json = JSON.parse(text);
-														var html = "";
-														for(var i = 0; i < 10; i++){
-															var hinhAnh, ten , giaBan, urlXe;
-															try {
-																hinhAnh = json[i].hinhAnh;
-																ten = json[i].ten;
-																giaBan = json[i].giaBan;
-																urlXe = json[i].urlXe;
-															}
-															catch (err) {
-															}
-															var s = createSliderItem("carsdata" + hinhAnh, ten
-																, "$" + giaBan, urlXe, ten, "new");
-															html += s;
-														}
-														document.getElementById('slider01').innerHTML = html;
+													createSliderContent(link,"Mới" ,function(text){
+														document.getElementById('slider01').innerHTML = text;
 													});
 											</script>
 										</div>
@@ -661,25 +643,9 @@
 										<div id="slider02" class="arrivals_slider slider">
 											<script>
 												var link = "/carsdata/" + indexJson[1];
-													getTextFromFile(link, function (text) {
-														var json;
-														json = JSON.parse(text);
-												var html = "";
-												for (var i = 0; i < 10; i++) {
-													var hinhAnh, ten, giaBan, urlXe;
-													try {
-														hinhAnh = json[i].hinhAnh;
-														ten = json[i].ten;
-														giaBan = json[i].giaBan;
-														urlXe = json[i].ten;
-													}
-													catch (err) {
-													}
-													var s = createSliderItem("carsdata" + hinhAnh, ten
-														, "$" + giaBan, urlXe, ten, "best seller");
-													html += s;
-												}
-												document.getElementById('slider02').innerHTML = html;});
+												createSliderContent(link,"Hot" ,function(text){
+														document.getElementById('slider02').innerHTML = text;
+													});	
 											</script>
 										</div>
 										<div class="arrivals_slider_dots_cover"></div>
@@ -690,25 +656,9 @@
 										<div id="slider03" class="arrivals_slider slider">
 												<script>
 													var link = "/carsdata/" + indexJson[2];
-													getTextFromFile(link, function (text) {
-														var json;
-														json = JSON.parse(text);
-														var html = "";
-														for (var i = 0; i < 10; i++) {
-															var hinhAnh, ten, giaBan, urlXe;
-															try {
-																hinhAnh = json[i].hinhAnh;
-																ten = json[i].ten;
-																giaBan = json[i].giaBan;
-																urlXe = json[i].ten;
-															}
-															catch (err) {
-															}
-															var s = createSliderItem("carsdata" + hinhAnh, ten
-																, "$" + giaBan, urlXe, ten, "view");
-															html += s;
-														}
-														document.getElementById('slider03').innerHTML = html;});
+													createSliderContent(link,"view" ,function(text){
+														document.getElementById('slider03').innerHTML = text;
+													});
 													</script>
 										</div>
 										<div class="arrivals_slider_dots_cover"></div>
@@ -760,25 +710,9 @@
 										<div id="slider04" class="arrivals_slider slider">
 												<script>
 													var link = "/carsdata/" + indexJson[3];
-													getTextFromFile(link, function (text) {
-														var json;
-														json = JSON.parse(text);
-														var html = "";
-														for (var i = 0; i < 10; i++) {
-															var hinhAnh, ten, giaBan, urlXe;
-															try {
-																hinhAnh = json[i].hinhAnh;
-																ten = json[i].ten;
-																giaBan = json[i].giaBan;
-																urlXe = json[i].ten;
-															}
-															catch (err) {
-															}
-															var s = createSliderItem("carsdata" + hinhAnh, ten
-																, "$" + giaBan, urlXe, ten, "best seller");
-															html += s;
-														}
-														document.getElementById('slider04').innerHTML = html;});
+													createSliderContent(link,"Tag" ,function(text){
+														document.getElementById('slider04').innerHTML = text;
+													});
 													</script>
 										</div>
 										<div class="arrivals_slider_dots_cover"></div>
@@ -789,25 +723,9 @@
 										<div id="slider05" class="arrivals_slider slider">
 												<script>
 														var link = "/carsdata/" + indexJson[4];
-														getTextFromFile(link, function (text) {
-															var json;
-															json = JSON.parse(text);
-															var html = "";
-															for (var i = 0; i < 10; i++) {
-																var hinhAnh, ten, giaBan, urlXe;
-																try {
-																	hinhAnh = json[i].hinhAnh;
-																	ten = json[i].ten;
-																	giaBan = json[i].giaBan;
-																	urlXe = json[i].ten;
-																}
-																catch (err) {
-																}
-																var s = createSliderItem("carsdata" + hinhAnh, ten
-																	, "$" + giaBan, urlXe, ten, "best seller");
-																html += s;
-															}
-															document.getElementById('slider05').innerHTML = html;});
+														createSliderContent(link,"Tag" ,function(text){
+														document.getElementById('slider05').innerHTML = text;
+													});
 														</script>
 										</div>
 										<div class="arrivals_slider_dots_cover"></div>
@@ -818,25 +736,9 @@
 										<div id="slider06" class="arrivals_slider slider">
 												<script>
 														var link = "/carsdata/" + indexJson[5];
-														getTextFromFile(link, function (text) {
-															var json;
-															json = JSON.parse(text);
-															var html = "";
-															for (var i = 0; i < 10; i++) {
-																var hinhAnh, ten, giaBan, urlXe;
-																try {
-																	hinhAnh = json[i].hinhAnh;
-																	ten = json[i].ten;
-																	giaBan = json[i].giaBan;
-																	urlXe = json[i].ten;
-																}
-																catch (err) {
-																}
-																var s = createSliderItem("carsdata" + hinhAnh, ten
-																	, "$" + giaBan, urlXe, ten, "best seller");
-																html += s;
-															}
-															document.getElementById('slider06').innerHTML = html;});
+														createSliderContent(link,"Tag" ,function(text){
+														document.getElementById('slider06').innerHTML = text;
+													});
 														</script>
 										</div>
 										<div class="arrivals_slider_dots_cover"></div>
