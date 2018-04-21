@@ -60,11 +60,7 @@ function createSliderItem(hinhAnh, alt, price, link, name, mark) {
                         </div>
                     </div>
                     <div class="product_extras">
-                        <div class="product_color">
-                            <input type="radio" checked name="product_color" style="background:#b19c83">
-                            <input type="radio" name="product_color" style="background:#000000">
-                            <input type="radio" name="product_color" style="background:#999999">
-                        </div>
+                        
                         <button class="product_cart_button">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
@@ -92,6 +88,7 @@ function createSliderContent(jsonFile, mark, callback) {
                 giaBan = json[i].giaBan;
                 urlXe = json[i].urlXe;
                 urlXe ="/carsdata/" + json[i].nhaSanXuat+ "/" + ten + ".html";
+                urlXe = "/product.html"
             }
             catch (err) {
             }

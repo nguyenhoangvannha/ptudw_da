@@ -1,6 +1,6 @@
 function createShopItem(hinhAnh, alt, giaBan, link, ten, mark) {
-    var html = 
-    `<div class="product_item">
+    var html = '<a href="' + link + 
+    `"><div class="product_item">
     <div class="product_border"></div>
     <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="`
         + hinhAnh + '" alt="' + alt + ` width="100" height="100"></div>
@@ -13,7 +13,7 @@ function createShopItem(hinhAnh, alt, giaBan, link, ten, mark) {
                 <li class="product_mark product_discount">-25%</li>
                 <li class="product_mark product_new">` + mark + `</li>
             </ul>
-        </div>`;
+        </div></a>`;
         return html;
 }
 function createShopContent(jsonFile, mark, callback) {
@@ -27,7 +27,7 @@ function createShopContent(jsonFile, mark, callback) {
                 ten = json[i].ten;
                 giaBan = json[i].giaBan;
                 urlXe = json[i].urlXe;
-
+                urlXe = "/product.html"
             }
             catch (err) {
             }
