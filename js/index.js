@@ -31,12 +31,23 @@
 //         </ul>
 //     </div>
 // </div>
+function makePage(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function(){
+    if(xmlhttp.readyState==4 && xmlhttp.status==200)
+        alert("webpage " + xmlhttp.responseText + " was successfully created!");
+    }
+    var content = "<html><head><meta charset=\"utf-8\" /> </head><body>new website<script>alert(\"test\")</script></body></html>";
+    xmlhttp.open("GET","makePage.php?content=" + content,true);
+    xmlhttp.send();
+}
 function createSliderItem(hinhAnh, alt, price, link, name, mark) {
 
     var result =
         `<!-- Slider Item -->
     <div class="arrivals_slider_item">
     <div class="border_active"></div>
+    <a href="`+link+`">
     <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
         <div class="product_image d-flex flex-column align-items-center justify-content-center">
             <img src="` + hinhAnh + '" alt="' + alt + `  width="100" height="100" ">
@@ -54,7 +65,7 @@ function createSliderItem(hinhAnh, alt, price, link, name, mark) {
                             <input type="radio" name="product_color" style="background:#000000">
                             <input type="radio" name="product_color" style="background:#999999">
                         </div>
-                        <button class="product_cart_button">Add to Cart</button>
+                        <button class="product_cart_button">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
                 <div class="product_fav">
@@ -64,7 +75,7 @@ function createSliderItem(hinhAnh, alt, price, link, name, mark) {
                     <li class="product_mark product_discount">-25%</li>
                     <li class="product_mark product_new">` + mark + `</li>
                     </ul>
-                </div>
+                </div></a>
             </div>`;
     return result;
 }
@@ -80,6 +91,7 @@ function createSliderContent(jsonFile, mark, callback) {
                 ten = json[i].ten;
                 giaBan = json[i].giaBan;
                 urlXe = json[i].urlXe;
+                urlXe ="/carsdata/" + json[i].nhaSanXuat+ "/" + ten + ".html";
             }
             catch (err) {
             }
