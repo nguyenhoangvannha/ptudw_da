@@ -20,7 +20,13 @@
 </head>
 
 <body>
-
+		<script>
+				var indexFile = "/carsdata/index.json";
+				var indexJson;
+				getTextFromFile(indexFile, function (text) {
+					indexJson = JSON.parse(text);
+				});
+			</script>
 	<div class="super_container">
 
 		<!-- Header -->
@@ -44,51 +50,15 @@
 								<a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
 							</div>
 							<div class="top_bar_content ml-auto">
-								<div class="top_bar_menu">
-									<ul class="standard_dropdown top_bar_dropdown">
-										<li>
-											<a href="#">English
-												<i class="fas fa-chevron-down"></i>
-											</a>
-											<ul>
-												<li>
-													<a href="#">Italian</a>
-												</li>
-												<li>
-													<a href="#">Spanish</a>
-												</li>
-												<li>
-													<a href="#">Japanese</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="#">$ US dollar
-												<i class="fas fa-chevron-down"></i>
-											</a>
-											<ul>
-												<li>
-													<a href="#">EUR Euro</a>
-												</li>
-												<li>
-													<a href="#">GBP British Pound</a>
-												</li>
-												<li>
-													<a href="#">JPY Japanese Yen</a>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</div>
 								<div class="top_bar_user">
 									<div class="user_icon">
 										<img src="images/user.svg" alt="">
 									</div>
 									<div>
-										<a href="#">Register</a>
+										<a href="#">Đăng ký</a>
 									</div>
 									<div>
-										<a href="#">Sign in</a>
+										<a href="#">Đăng nhập</a>
 									</div>
 								</div>
 							</div>
@@ -107,7 +77,7 @@
 						<div class="col-lg-2 col-sm-3 col-3 order-1">
 							<div class="logo_container">
 								<div class="logo">
-									<a href="#">OneTech</a>
+									<a href="#">Xe hơi FIT</a>
 								</div>
 							</div>
 						</div>
@@ -118,14 +88,14 @@
 								<div class="header_search_content">
 									<div class="header_search_form_container">
 										<form action="#" class="header_search_form clearfix">
-											<input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+											<input type="search" required="required" class="header_search_input" placeholder="Tìm kiếm sản phẩm...">
 											<div class="custom_dropdown">
 												<div class="custom_dropdown_list">
-													<span class="custom_dropdown_placeholder clc">All Categories</span>
+													<span class="custom_dropdown_placeholder clc">Tất cả danh mục</span>
 													<i class="fas fa-chevron-down"></i>
 													<ul class="custom_list clc">
 														<li>
-															<a class="clc" href="#">All Categories</a>
+															<a class="clc" href="#">Tất cả danh mục</a>
 														</li>
 														<li>
 															<a class="clc" href="#">Computers</a>
@@ -157,18 +127,6 @@
 						<!-- Wishlist -->
 						<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
 							<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-								<div class="wishlist d-flex flex-row align-items-center justify-content-end">
-									<div class="wishlist_icon">
-										<img src="images/heart.png" alt="">
-									</div>
-									<div class="wishlist_content">
-										<div class="wishlist_text">
-											<a href="#">Wishlist</a>
-										</div>
-										<div class="wishlist_count">115</div>
-									</div>
-								</div>
-
 								<!-- Cart -->
 								<div class="cart">
 									<div class="cart_container d-flex flex-row align-items-center justify-content-end">
@@ -180,7 +138,7 @@
 										</div>
 										<div class="cart_content">
 											<div class="cart_text">
-												<a href="#">Cart</a>
+												<a href="#">Giỏ hàng</a>
 											</div>
 											<div class="cart_price">$85</div>
 										</div>
@@ -203,7 +161,7 @@
 
 								<div class="cat_menu_container">
 									<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
-										<div class="cat_menu_text">Trang chủ</div>
+											<a href="index.html"><div class="cat_menu_text">Trang chủ</div></a>
 									</div>
 								</div>
 
@@ -211,143 +169,45 @@
 
 								<div class="main_nav_menu ml-auto">
 									<ul class="standard_dropdown main_nav_dropdown">
+											<li>
+													<a href="shop.html">Tất cả sản phẩm
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
 										<li class="hassubs">
-											<a href="#">Super Deals
+											<a href="#">Nhà sản xuất
 												<i class="fas fa-chevron-down"></i>
 											</a>
-											<ul>
-												<li>
-													<a href="#">Menu Item
-														<i class="fas fa-chevron-down"></i>
-													</a>
-													<ul>
-														<li>
-															<a href="#">Menu Item
-																<i class="fas fa-chevron-down"></i>
-															</a>
-														</li>
-														<li>
-															<a href="#">Menu Item
-																<i class="fas fa-chevron-down"></i>
-															</a>
-														</li>
-														<li>
-															<a href="#">Menu Item
-																<i class="fas fa-chevron-down"></i>
-															</a>
-														</li>
-													</ul>
-												</li>
-												<li>
-													<a href="#">Menu Item
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">Menu Item
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">Menu Item
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
+											<ul id="list01">
+												<script>
+													var html = "";
+													for(var i = 0; i < indexJson.length; i++){
+														html += createMenuItem(indexJson[i], "shop.html");
+													}
+													document.getElementById('list01').innerHTML = html;
+												</script>
 											</ul>
 										</li>
 										<li class="hassubs">
-											<a href="#">Featured Brands
+											<a href="#">Loại sản phẩm
 												<i class="fas fa-chevron-down"></i>
 											</a>
-											<ul>
-												<li>
-													<a href="#">Menu Item
-														<i class="fas fa-chevron-down"></i>
-													</a>
-													<ul>
-														<li>
-															<a href="#">Menu Item
-																<i class="fas fa-chevron-down"></i>
-															</a>
-														</li>
-														<li>
-															<a href="#">Menu Item
-																<i class="fas fa-chevron-down"></i>
-															</a>
-														</li>
-														<li>
-															<a href="#">Menu Item
-																<i class="fas fa-chevron-down"></i>
-															</a>
-														</li>
-													</ul>
-												</li>
-												<li>
-													<a href="#">Menu Item
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">Menu Item
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">Menu Item
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
+											<ul id="list02">
+												<script>
+													var year = 2018;
+													var html = "";
+													for(var i = 0; i < 6; i++){
+														html += createMenuItem("Năm " + year, "shop.html");
+														year--;
+													}
+													document.getElementById('list02').innerHTML = html;
+													</script>
 											</ul>
 										</li>
-										<li class="hassubs">
-											<a href="#">Pages
-												<i class="fas fa-chevron-down"></i>
-											</a>
-											<ul>
-												<li>
-													<a href="shop.html">Shop
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-												<li>
-													<a href="product.html">Product
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-												<li>
-													<a href="blog.html">Blog
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-												<li>
-													<a href="blog_single.html">Blog Post
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-												<li>
-													<a href="regular.html">Regular Post
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-												<li>
-													<a href="cart.html">Cart
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-												<li>
-													<a href="contact.html">Contact
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
-											</ul>
-										</li>
+										
+										
 										<li>
-											<a href="blog.html">Blog
-												<i class="fas fa-chevron-down"></i>
-											</a>
-										</li>
-										<li>
-											<a href="contact.html">Contact
+											<a href="contact.html">Liên hệ
 												<i class="fas fa-chevron-down"></i>
 											</a>
 										</li>
@@ -594,13 +454,7 @@
 		<!-- Popular Categories -->
 		<!-- Banner -->
 		<!-- Hot New Arrivals -->
-		<script>
-			var indexFile = "/carsdata/index.json";
-			var indexJson;
-			getTextFromFile(indexFile, function (text) {
-				indexJson = JSON.parse(text);
-			});
-		</script>
+		
 		<div class="new_arrivals">
 			<div class="container">
 				<div class="row">

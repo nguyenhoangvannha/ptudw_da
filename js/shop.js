@@ -27,10 +27,17 @@ function createShopContent(jsonFile, mark, callback) {
                 ten = json[i].ten;
                 giaBan = json[i].giaBan;
                 urlXe = json[i].urlXe;
+
             }
             catch (err) {
             }
-            var s = createShopItem("carsdata" + hinhAnh, ten
+            var urlHinh;
+            if(hinhAnh == undefined){
+                urlHinh = '/images/noimage.png';
+            } else {
+                urlHinh = "carsdata" + hinhAnh;
+            }
+            var s = createShopItem(urlHinh, ten
                 , "$" + giaBan, urlXe, ten, mark);
             html += s;
         }

@@ -32,6 +32,7 @@
 //     </div>
 // </div>
 function createSliderItem(hinhAnh, alt, price, link, name, mark) {
+
     var result =
         `<!-- Slider Item -->
     <div class="arrivals_slider_item">
@@ -82,7 +83,14 @@ function createSliderContent(jsonFile, mark, callback) {
             }
             catch (err) {
             }
-            var s = createSliderItem("carsdata" + hinhAnh, ten
+            var urlHinh;
+            if (hinhAnh == undefined) {
+                urlHinh = '/images/noimage.png';
+            } else {
+                urlHinh = "carsdata" + hinhAnh;
+            }
+
+            var s = createSliderItem(urlHinh, ten
                 , "$" + giaBan, urlXe, ten, mark);
             html += s;
         }

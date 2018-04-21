@@ -12,3 +12,10 @@ function getTextFromFile(file, callback) {
     }
     rawFile.send(null);
 }
+function createMenuItem(title, link) {
+    var html = `<li>
+    <a href="` + link + '">' + title + `<i class="fas fa-chevron-down"></i>
+    </a>
+    </li>`;
+    return html;
+}
