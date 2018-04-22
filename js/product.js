@@ -22,7 +22,7 @@ function createContent(jsonFile, callback) {
     getTextFromFile(jsonFile, function (text) {
         var json = JSON.parse(text);
         var html = "";
-        for (var i = 0; i < 5; i++) {
+        for (var i = 1; i < 6; i++) {
             var hinhAnh, ten, giaBan, urlXe;
             try {
                 hinhAnh = json[i].hinhAnh;
