@@ -11,22 +11,84 @@
 </head>
 
 <body>
-
-		"ten":"Audi A3","hinhAnh":"/Audi/USC70AUC151A021001.png","giaBan":31950,"soLuotXem":0,"soLuongBan":0,"moTa":"
-		The Audi A3 is available as a convertible, sedan and hatchback.
-		 The 2018 A3 starts at $31,950 (MSRP), with a destination charge of $975.
-		  It gets EPA-estimated 25-29 MPG combined. The Audi A3 competes against models like the Acura ILX,
-		   Ford Fusion, and Hyundai Sonata. The A3 is a good fit for sun lovers Sun Lover vehicles 
-		   have convertible tops or removable roofs. May require specific trim level and/or optional features.
-			, luxury shoppers Luxury vehicles include all models from dedicated luxury brands plus luxurious models
-			 selected by our editors. , eco-friendly shoppers Eco-Friendly vehicles have a minimum EPA-estimated 
-			 mileage of 35 mpg combined and include hybrids, diesels and even a few fuel-sipping gas-only cars.
-			  May require specific trim level and/or optional features. , and commuters Commuter vehicles have
-			   a minimum EPA-estimated mileage of 30 mpg combined. 
-			   May require specific trim level and/or optional features. 
-			   .","loai":"2018","nhaSanXuat":"Audi","urlXe":"https://www.cars.com/research/audi-a3/",
-			   "urlHinhAnh":"https://www.cstatic-images.com/car-pictures/main/USC70AUC151A021001.png"
-			   <a href="product.html"></a>
+		<div class="new_arrivals">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="tabbed_container">
+								<div class="tabs clearfix tabs-right">
+									<div class="new_arrivals_title">Nhà sản xuất</div>
+									<ul class="clearfix">
+										<li id="title01" class="active">
+											<script>
+												document.getElementById('title01').innerHTML = indexJson[3];
+											</script>
+										</li>
+										<li id="title02">
+											<script>
+												document.getElementById('title02').innerHTML = indexJson[4];
+											</script>
+										</li>
+										<li id="title03">
+											<script>
+												document.getElementById('title03').innerHTML = indexJson[5];
+											</script>
+										</li>
+									</ul>
+									<div class="tabs_line">
+										<span></span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12" style="z-index:1;">
+										<!-- Product Panel -->
+										<div class="product_panel panel active">
+											<div id="slider04" class="arrivals_slider slider">
+												<script>
+													var link = "/carsdata/" + indexJson[3];
+													createSliderContent(link, "Tag", function (text) {
+														document.getElementById('slider04').innerHTML = text;
+													});
+												</script>
+											</div>
+											<div class="arrivals_slider_dots_cover"></div>
+										</div>
+	
+										<!-- Product Panel -->
+										<div class="product_panel panel">
+											<div id="slider05" class="arrivals_slider slider">
+												<script>
+													var link = "/carsdata/" + indexJson[4];
+													createSliderContent(link, "Tag", function (text) {
+														document.getElementById('slider05').innerHTML = text;
+													});
+												</script>
+											</div>
+											<div class="arrivals_slider_dots_cover"></div>
+										</div>
+	
+										<!-- Product Panel -->
+										<div class="product_panel panel">
+											<div id="slider06" class="arrivals_slider slider">
+												<script>
+													var link = "/carsdata/" + indexJson[5];
+													createSliderContent(link, "Tag", function (text) {
+														document.getElementById('slider06').innerHTML = text;
+													});
+												</script>
+											</div>
+											<div class="arrivals_slider_dots_cover"></div>
+										</div>
+	
+									</div>
+	
+								</div>
+	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 </body>
 
 </html>

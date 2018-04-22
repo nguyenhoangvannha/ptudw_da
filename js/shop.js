@@ -8,7 +8,6 @@ function createShopItem(hinhAnh, alt, giaBan, link, ten, mark) {
             <div class="product_price">` + giaBan + `</div>
             <div class="product_name"><div><a href="`+ link+`" tabindex="0">` + ten + `</a></div></div>
             </div>
-            <div class="product_fav"><i class="fas fa-heart"></i></div>
             <ul class="product_marks">
                 <li class="product_mark product_discount">-25%</li>
                 <li class="product_mark product_new">` + mark + `</li>

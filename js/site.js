@@ -19,3 +19,9 @@ function createMenuItem(title, link) {
     </li>`;
     return html;
 }
+function createDropDownItem(title) {
+    var html = `<li>
+    <a class="clc" href="#">` + title + `</a>
+</li>`;
+    return html;
+}

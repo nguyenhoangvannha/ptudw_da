@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Shop</title>
+<title>Xe hơi FIT - Cửa hàng</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="OneTech shop project">
@@ -29,7 +29,6 @@
 <div class="super_container">
 	
 	<!-- Header -->
-	
 	<header class="header">
 
 			<!-- Top Bar -->
@@ -41,12 +40,12 @@
 							<div class="top_bar_contact_item">
 								<div class="top_bar_icon">
 									<img src="images/phone.png" alt="">
-								</div>+38 068 005 3570</div>
+								</div>+84 168 888 9316</div>
 							<div class="top_bar_contact_item">
 								<div class="top_bar_icon">
 									<img src="images/mail.png" alt="">
 								</div>
-								<a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
+								<a href="mailto:fastsales@gmail.com">admin@gmail.com</a>
 							</div>
 							<div class="top_bar_content ml-auto">
 								<div class="top_bar_user">
@@ -92,25 +91,18 @@
 												<div class="custom_dropdown_list">
 													<span class="custom_dropdown_placeholder clc">Tất cả danh mục</span>
 													<i class="fas fa-chevron-down"></i>
-													<ul class="custom_list clc">
-														<li>
+													<ul id="dropDown01" class="custom_list clc">
+
+														<script>
+															var items = `<li>
 															<a class="clc" href="#">Tất cả danh mục</a>
-														</li>
-														<li>
-															<a class="clc" href="#">Computers</a>
-														</li>
-														<li>
-															<a class="clc" href="#">Laptops</a>
-														</li>
-														<li>
-															<a class="clc" href="#">Cameras</a>
-														</li>
-														<li>
-															<a class="clc" href="#">Hardware</a>
-														</li>
-														<li>
-															<a class="clc" href="#">Smartphones</a>
-														</li>
+														</li>`;
+															for (let index = 0; index < indexJson.length; index++) {
+																var title = indexJson[index].substring(0, indexJson[index].indexOf(".", 0));
+																items += createDropDownItem(title);;
+															}
+															document.getElementById('dropDown01').innerHTML = items;
+														</script>
 													</ul>
 												</div>
 											</div>
@@ -132,14 +124,14 @@
 										<div class="cart_icon">
 											<img src="images/cart.png" alt="">
 											<div class="cart_count">
-												<span>10</span>
+												<span>0</span>
 											</div>
 										</div>
 										<div class="cart_content">
 											<div class="cart_text">
 												<a href="#">Giỏ hàng</a>
 											</div>
-											<div class="cart_price">$85</div>
+											<div class="cart_price">$0</div>
 										</div>
 									</div>
 								</div>
@@ -160,7 +152,9 @@
 
 								<div class="cat_menu_container">
 									<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
-											<a href="index.html"><div class="cat_menu_text">Trang chủ</div></a>
+										<a href="index.html">
+											<div class="cat_menu_text">Trang chủ</div>
+										</a>
 									</div>
 								</div>
 
@@ -168,11 +162,11 @@
 
 								<div class="main_nav_menu ml-auto">
 									<ul class="standard_dropdown main_nav_dropdown">
-											<li>
-													<a href="shop.html">Tất cả sản phẩm
-														<i class="fas fa-chevron-down"></i>
-													</a>
-												</li>
+										<li>
+											<a href="shop.html">Tất cả sản phẩm
+												<i class="fas fa-chevron-down"></i>
+											</a>
+										</li>
 										<li class="hassubs">
 											<a href="#">Nhà sản xuất
 												<i class="fas fa-chevron-down"></i>
@@ -180,8 +174,11 @@
 											<ul id="list01">
 												<script>
 													var html = "";
-													for(var i = 0; i < indexJson.length; i++){
-														html += createMenuItem(indexJson[i], "shop.html");
+													for (var i = 0; i < indexJson.length; i++) {
+														var title = indexJson[i] + "";
+														title = title.substring(0, title.indexOf(".", 0));
+
+														html += createMenuItem(title, "shop.html");
 													}
 													document.getElementById('list01').innerHTML = html;
 												</script>
@@ -193,18 +190,18 @@
 											</a>
 											<ul id="list02">
 												<script>
-													var year = 2018;
+													var year = new Date().getFullYear();
 													var html = "";
-													for(var i = 0; i < 6; i++){
+													for (var i = 0; i < 6; i++) {
 														html += createMenuItem("Năm " + year, "shop.html");
 														year--;
 													}
 													document.getElementById('list02').innerHTML = html;
-													</script>
+												</script>
 											</ul>
 										</li>
-										
-										
+
+
 										<li>
 											<a href="contact.html">Liên hệ
 												<i class="fas fa-chevron-down"></i>
@@ -447,15 +444,8 @@
 			</div>
 
 		</header>
-	
+		
 	<!-- Home -->
-	<script>
-		var indexFile = "/carsdata/index.json";
-		var indexJson;
-		getTextFromFile(indexFile, function (text) {
-			indexJson = JSON.parse(text);
-		});
-	</script>
 	<!-- Shop -->
 
 	<div class="shop">
@@ -577,28 +567,48 @@
 	<!-- Copyright -->
 
 	<div class="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					
-					<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
-						<div class="copyright_content"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</div>
-						<div class="logos ml-sm-auto">
-							<ul class="logos_list">
-								<li><a href="#"><img src="images/logos_1.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_2.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_3.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_4.png" alt=""></a></li>
-							</ul>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+
+						<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
+							<div class="copyright_content">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;
+								<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with
+								<i class="fa fa-heart" aria-hidden="true"></i> by
+								<a href="#">Xe hơi FIT</a>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</div>
+							<div class="logos ml-sm-auto">
+								<ul class="logos_list">
+									<li>
+										<a href="#">
+											<img src="images/logos_1.png" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="images/logos_2.png" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="images/logos_3.png" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="images/logos_4.png" alt="">
+										</a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
