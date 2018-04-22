@@ -43,3 +43,33 @@ function createShopContent(jsonFile, mark, callback) {
         callback(html);
     });
 }
+function getProductsCount(jsonFile, callback) {
+    var count = 0;
+    for(var i = 0; i < jsonFile.length; i++){
+        getTextFromFile("/carsdata/" + jsonFile[i], function (text) {
+            var json = JSON.parse(text);
+            count += json.length;
+        });
+    }
+    callback(count);
+}
+function createManufactureItem(title) {
+    return `<li style="cursor: pointer;" class="list-group-item">` + title + "</li>";
+}
+function createManufactureItems(indexJson) {
+    var html = "";
+    for(var i = 0; i < indexJson.length; i++){
+        var title = indexJson[i].substring(0, indexJson[i].indexOf("."));
+        html += createManufactureItem(title);
+    }
+    return html;
+}
+function createTypeItems() {
+    var html = "";
+    var year = new Date().getFullYear();
+    for(var i = 0; i < 10; i++){
+        html += createManufactureItem("Năm " + year);
+        year--;
+    }
+    return html;
+}
