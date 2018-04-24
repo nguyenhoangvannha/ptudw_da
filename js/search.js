@@ -12,7 +12,10 @@ function createResultItem(name, image, price, des, year) {
     </div>
     <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="`+name+`" style="width: 250px; height: 200px;" src="`+image+`" data-holder-rendered="true">
 
-    <button class="product_cart_button btn-buy">Thêm vào giỏ hàng</button>
+    <div class="product_extras">
+                        
+                        <button class="product_cart_button">Thêm vào giỏ hàng</button>
+                    </div>
   </div>`
   return html;
 }
