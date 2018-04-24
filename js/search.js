@@ -1,4 +1,4 @@
-function createResultItem(name, image, price) {
+function createResultItem(name, image, price, des, year) {
     var html = `<!-- Product item -->
     <div class="card flex-md-row mb-4 box-shadow h-md-250">
     <div class="card-body d-flex flex-column align-items-start">
@@ -6,6 +6,8 @@ function createResultItem(name, image, price) {
       <h3 class="mb-0">
         <a class="text-dark" href="#">$`+price+`</a>
       </h3>
+      <div class="mb-1 text-muted">`+year+`</div>
+      <textarea class="card-text mb-auto" cols="100" maxlength="200">`+des+`</textarea>
       <a href="product.html">read more</a>
     </div>
     <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="`+name+`" style="width: 250px; height: 200px;" src="`+image+`" data-holder-rendered="true">
@@ -17,8 +19,10 @@ function createResultContent(jsonFile, callback) {
         var json = JSON.parse(text);
         var html = "";
         for (var i = 0; i < 20; i++) {
-            var hinhAnh, ten, giaBan, urlXe;
+            var loai, moTa,hinhAnh, ten, giaBan, urlXe;
             try {
+                loai = json[i].loai;
+                moTa = json[i].moTa;
                 hinhAnh = json[i].hinhAnh;
                 ten = json[i].ten;
                 giaBan = json[i].giaBan;
@@ -33,7 +37,7 @@ function createResultContent(jsonFile, callback) {
             } else {
                 urlHinh = "carsdata" + hinhAnh;
             }
-            var s = createResultItem(ten, urlHinh, giaBan);
+            var s = createResultItem(ten, urlHinh, giaBan, moTa, loai);
             html += s;
         }
         callback(html);
