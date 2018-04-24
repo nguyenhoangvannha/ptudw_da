@@ -1,15 +1,16 @@
 function createResultItem(name, image, price) {
     var html = `<!-- Product item -->
-    <div class="item">
-      <div class="image">
-        <img src="` +image+ `" alt="`+name+`" width="100px" height="100px"/>
-      </div>
-      <div class="description">
-        <span>`+name+`</span>
-      </div>
-      <div class="total-price">`+price+`</div>
-    </div>`
-    return html;
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+    <div class="card-body d-flex flex-column align-items-start">
+      <strong class="d-inline-block mb-2 text-primary">`+name+`</strong>
+      <h3 class="mb-0">
+        <a class="text-dark" href="#">$`+price+`</a>
+      </h3>
+      <a href="product.html">read more</a>
+    </div>
+    <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="`+name+`" style="width: 250px; height: 200px;" src="`+image+`" data-holder-rendered="true">
+  </div>`
+  return html;
 }
 function createResultContent(jsonFile, callback) {
     getTextFromFile(jsonFile, function (text) {

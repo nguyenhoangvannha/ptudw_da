@@ -15,7 +15,6 @@
 	<link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="styles/shop_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/shop_responsive.css">
-	<link rel="stylesheet" type="text/css" href="css/search.css">
 	<script src="js/site.js"></script>
     <script src="js/search.js"></script>
     
@@ -525,14 +524,30 @@
 									</a>
 									<div class="collapse show" id="collapseExample">
 										<ul id="listManufacture" class="list-group">
-											<li style="cursor: pointer;" class="list-group-item">Audi</li>
-											<li style="cursor: pointer;" class="list-group-item">BMW</li>
-											<li style="cursor: pointer;" class="list-group-item">Chevrolet</li>
-											<li style="cursor: pointer;" class="list-group-item">Ford</li>
-											<li style="cursor: pointer;" class="list-group-item">Lexus</li>
-											<li style="cursor: pointer;" class="list-group-item">Mercedes-Benz</li>
-											<li style="cursor: pointer;" class="list-group-item">Nissan</li>
-											<li style="cursor: pointer;" class="list-group-item">Toyota</li>
+											<li style="cursor: pointer;" class="list-group-item">
+												<a href="#">Audi</a>
+											</li>
+											<li style="cursor: pointer;" class="list-group-item">
+												<a href="#">BMW</a>
+											</li>
+											<li style="cursor: pointer;" class="list-group-item">
+												<a href="#">Chevrolet</a>
+											</li>
+											<li style="cursor: pointer;" class="list-group-item">
+												<a href="#">Ford</a>
+											</li>
+											<li style="cursor: pointer;" class="list-group-item">
+												<a href="#">Lexus</a>
+											</li>
+											<li style="cursor: pointer;" class="list-group-item">
+												<a href="#">Mercedes-Benz</a>
+											</li>
+											<li style="cursor: pointer;" class="list-group-item">
+												<a href="#">Nissan</a>
+											</li>
+											<li style="cursor: pointer;" class="list-group-item">
+												<a href="#">Toyota</a>
+											</li>
 										</ul>
 									</div>
 								</div>
@@ -572,11 +587,12 @@
 						<!-- Shop Content -->
 
 						<div class="shop_content">
-							<div id="searchContent" class="shopping-cart">
+							<div id="searchContent" class="">
+
                                <script>
                                    var html = `<!-- Title -->
                                 <div class="title">
-                                  Shopping Bag
+                                  <h3>Cars</h3>
                                 </div>`
                                 createResultContent("carsdata/Audi.json", function (text) {
                                     document.getElementById('searchContent').innerHTML = html +text;
