@@ -7,14 +7,13 @@ function createResultItem(name, image, price, des, year) {
         <a class="text-dark" href="#">$`+price+`</a>
       </h3>
       <div class="mb-1 text-muted">`+year+`</div>
-      <textarea class="card-text mb-auto" cols="50" maxlength="50">`+des+`</textarea>
+      <label style="width: 80%;height:60px;overflow: hidden;">`+des+`</label>
       <a href="product.html">read more</a>
     </div>
-    <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="`+name+`" style="width: 250px; height: 200px;" src="`+image+`" data-holder-rendered="true">
+    <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="`+name+`" style="width: 220px; height: 170px;" src="`+image+`" data-holder-rendered="true">
 
     <div class="product_extras">
-                        
-                        <button class="product_cart_button">Thêm vào giỏ hàng</button>
+                        <a name="" id="" class="btn btn-primary btn-buy" style="color: white" role="button">Thêm vào giỏ hàng</a>
                     </div>
   </div>`
   return html;
@@ -48,3 +47,5 @@ function createResultContent(jsonFile, callback) {
         callback(html);
     });
 }
+
+
