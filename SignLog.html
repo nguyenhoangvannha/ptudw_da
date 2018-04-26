@@ -558,7 +558,7 @@
        </div>
        <div class="cont_form_login">
         <a href="" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
-        <h2>ĐĂNG NHẬP</h2>
+        <h2>&nbsp</h2>
         <input type="text" placeholder="Email" />
         <input type="password" placeholder="Mật khẩu" />
         <form action="index.html">
@@ -568,13 +568,30 @@
 
       <div class="cont_form_sign_up">
         <a href="" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
-        <h2>ĐĂNG KÝ</h2>
         <input type="text" placeholder="Email" />
         <input type="text" placeholder="Tên người dùng" />
         <input type="password" placeholder="Mật khẩu" />
         <input type="password" placeholder="Nhập lại mật khẩu" />
-        <form action="RegSuccessful.html">
-        <button class="btn_sign_up" onclick="cambiar_sign_up()">ĐĂNG KÝ</button>
+        <form action="RegSuccessful.html" onsubmit="return checkform(this);">
+        	 <!-- START CAPTCHA -->
+<br>
+<div class="capbox">
+
+<div id="CaptchaDiv"></div>
+
+<div class="capbox-inner">
+Type the above number:<br>
+
+<input type="hidden" id="txtCaptcha">
+<input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+
+</div>
+</div>
+<br>
+<!-- END CAPTCHA -->
+        <button type="submit" class="btn_sign_up" onclick="cambiar_sign_up()">ĐĂNG KÝ</button>
+       
+
         </form>
       </div>
 
@@ -665,6 +682,53 @@
 	<script src="plugins/slick-1.8.0/slick.js"></script>
 	<script src="plugins/easing/easing.js"></script>
 	<script src="js/custom.js"></script>
+<script type="text/javascript">
+
+// Captcha Script
+
+function checkform(theform){
+var why = "";
+
+if(theform.CaptchaInput.value == ""){
+why += "- Please Enter CAPTCHA Code.\n";
+}
+if(theform.CaptchaInput.value != ""){
+if(ValidCaptcha(theform.CaptchaInput.value) == false){
+why += "- The CAPTCHA Code Does Not Match.\n";
+}
+}
+if(why != ""){
+alert(why);
+return false;
+}
+}
+
+var a = Math.ceil(Math.random() * 9)+ '';
+var b = Math.ceil(Math.random() * 9)+ '';
+var c = Math.ceil(Math.random() * 9)+ '';
+var d = Math.ceil(Math.random() * 9)+ '';
+var e = Math.ceil(Math.random() * 9)+ '';
+
+var code = a + b + c + d + e;
+document.getElementById("txtCaptcha").value = code;
+document.getElementById("CaptchaDiv").innerHTML = code;
+
+// Validate input against the generated number
+function ValidCaptcha(){
+var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+if (str1 == str2){
+return true;
+}else{
+return false;
+}
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string){
+return string.split(' ').join('');
+}
+</script>
 
 </body>
 
