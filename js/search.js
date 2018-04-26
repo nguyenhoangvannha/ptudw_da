@@ -25,7 +25,7 @@ function createResultItem(name, image, price, des, year) {
     <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="`+name+`" style="width: 220px; height: 170px;" src="`+image+`" data-holder-rendered="true">
 
     <div class="product_extras">
-                        <a name="" id="" class="btn btn-primary btn-buy" style="color: white" role="button">Thêm vào giỏ hàng</a>
+                        <a href="javascript:void(0);" name="" id="" class="btn btn-primary btn-buy" style="color: white" role="button">Thêm vào giỏ hàng</a>
                     </div>
   </div>`
   return html;
@@ -60,6 +60,34 @@ function createResultContent(jsonFile, callback) {
     });
 }
 
+$(document).on('click','.btn-buy',function (e) {
+    e.preventDefault();
+    var parent = $(this).parents('.card' ,'.flex-md-row', '.mb-4 box-shadow', '.h-md-250');
+    var cart = $(document).find('#cart-shop');
+        src = parent.find('img').attr('src');
+        
+        var parTop = parent.offset().top;
+        var parLeft = parent.offset().left;
+    
+        $('<img />', { 
+          class: 'img-fly',
+          src: src,
+        }).appendTo('body').css({
+            'top' : parTop,
+            'left' : parseInt(parLeft) + parseInt(parent.width()) - 50
+        });
 
+    setTimeout(function(){
+        $(document).find('.img-fly').css({
+        'top' : cart.offset().top,
+        'left' : cart.offset().left
+        });
+        setTimeout(function(){
+            $(document).find('.img-fly').remove();
+            var citem = parseInt(cart.find('#count-item').data('count'))+1;
+            cart.find('#count-item').text(citem).data('count',citem);
+        },1000);	
+    },500);
+});
 
 
