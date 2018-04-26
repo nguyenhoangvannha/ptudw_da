@@ -1,3 +1,15 @@
+function truncateText(selector, maxLength) {
+    var element = document.querySelector(selector),
+        truncated = element.innerText;
+
+    if (truncated.length > maxLength) {
+        truncated = truncated.substr(0,maxLength) + '...';
+    }
+    return truncated;
+}
+
+document.querySelector('p').innerText = truncateText('p', 200);
+
 function createResultItem(name, image, price, des, year) {
     var html = `<!-- Product item -->
     <div class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -7,7 +19,7 @@ function createResultItem(name, image, price, des, year) {
         <a class="text-dark" href="#">$`+price+`</a>
       </h3>
       <div class="mb-1 text-muted">`+year+`</div>
-      <label style="width: 80%;height:60px;overflow: hidden;">`+des+`</label>
+      <p style="width: 400px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">`+des+`</p>
       <a href="product.html">read more</a>
     </div>
     <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="`+name+`" style="width: 220px; height: 170px;" src="`+image+`" data-holder-rendered="true">
@@ -47,5 +59,7 @@ function createResultContent(jsonFile, callback) {
         callback(html);
     });
 }
+
+
 
 
