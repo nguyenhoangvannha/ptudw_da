@@ -6,8 +6,8 @@
 
 
 .shopping-cart {
-  width: 1000px;
-  height: 800px;
+  width: 900px;
+  height: 600px;
   margin: 80px auto;
   background: rgb(255, 255, 255);
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
@@ -30,6 +30,8 @@
   padding: 20px 30px;
   height: 120px;
   display: flex;
+  border-left: 1px outset #E1E8EE; 
+  border-top:  1px outset #E1E8EE; 
 }
 
 .item:nth-child(3) {

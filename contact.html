@@ -27,21 +27,33 @@
 			<div class="container">
 				<div class="row">
 					<div class="col d-flex flex-row">
-						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/phone.png" alt=""></div>+84 168 888 9316</div>
-						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/mail.png" alt=""></div><a href=" admin@gmail.com"> admin@gmail.com
-						</a></div>
+						<div class="top_bar_contact_item">
+							<div class="top_bar_icon">
+								<img src="images/phone.png" alt="">
+							</div>+84 168 888 9316</div>
+						<div class="top_bar_contact_item">
+							<div class="top_bar_icon">
+								<img src="images/mail.png" alt="">
+							</div>
+							<a href="mailto:fastsales@gmail.com">admin@gmail.com</a>
+						</div>
 						<div class="top_bar_content ml-auto">
 							<div class="top_bar_user">
-								<div class="user_icon"><img src="images/user.svg" alt=""></div>
-								<div><a href="Register.html">Đăng ký</a></div>
-								<div><a href="SignIn.html">Đăng nhập</a></div>
+								<div class="user_icon">
+									<img src="images/user.svg" alt="">
+								</div>
+								<div>
+									<a href="Register.html">Đăng ký</a>
+								</div>
+								<div>
+									<a href="SignIn.html">Đăng nhập</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>		
+			</div>
 		</div>
-
 
 		<!-- Header Main -->
 
@@ -52,7 +64,9 @@
 					<!-- Logo -->
 					<div class="col-lg-2 col-sm-3 col-3 order-1">
 						<div class="logo_container">
-							<div class="logo"><a href="#">Xe hơi FIT</a></div>
+							<div class="logo">
+								<a href="#">Xe hơi FIT</a>
+							</div>
 						</div>
 					</div>
 
@@ -61,13 +75,13 @@
 						<div class="header_search">
 							<div class="header_search_content">
 								<div class="header_search_form_container">
-									<form action="#" class="header_search_form clearfix">
+									<form action="search.html" class="header_search_form clearfix">
 										<input type="search" required="required" class="header_search_input" placeholder="Tìm kiếm sản phẩm...">
 										<div class="custom_dropdown">
 											<div class="custom_dropdown_list">
 												<span class="custom_dropdown_placeholder clc">Tất cả danh mục</span>
 												<i class="fas fa-chevron-down"></i>
-												<ul class="custom_list clc">
+												<ul id="dropDown01" class="custom_list clc">
 													<li>
 														<a class="clc" href="#">Tất cả danh mục</a>
 													</li>
@@ -98,29 +112,32 @@
 												</ul>
 											</div>
 										</div>
-										<button type="submit" class="header_search_button trans_300" value="Submit"><img src="images/search.png" alt=""></button>
+										<button type="submit" class="header_search_button trans_300" value="Submit">
+											<img src="images/search.png" alt="">
+										</button>
 									</form>
 								</div>
 							</div>
 						</div>
 					</div>
 
-
 					<!-- Wishlist -->
 					<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
 						<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-
 							<!-- Cart -->
 							<div class="cart">
-								<div class="cart">
-									<div class="cart_container d-flex flex-row align-items-center justify-content-end">
-										<div class="cart_icon">
-											<img src="images/cart.png" alt="">
-											<div class="cart_count"><span>10</span></div>
+								<div class="cart_container d-flex flex-row align-items-center justify-content-end">
+									<div class="cart_icon">
+										<img src="images/cart.png" alt="">
+										<div class="cart_count">
+											<span>0</span>
 										</div>
-										<div class="cart_content">
-											<div class="cart_text"><a href="cart.html">Giỏ hàng</a></div>
+									</div>
+									<div class="cart_content">
+										<div class="cart_text">
+											<a href="cart.html">Giỏ hàng</a>
 										</div>
+										<div class="cart_price">$0</div>
 									</div>
 								</div>
 							</div>
@@ -128,22 +145,21 @@
 					</div>
 				</div>
 			</div>
-		
+		</div>
+
 		<!-- Main Navigation -->
 
 		<nav class="main_nav">
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						
 						<div class="main_nav_content d-flex flex-row">
-
 							<!-- Categories Menu -->
 
 							<div class="cat_menu_container">
 								<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
 									<a href="index.html">
-										<div class="cat_menu_text">LIÊN HỆ</div>
+										<div class="cat_menu_text">Trang chủ</div>
 									</a>
 								</div>
 							</div>
@@ -152,8 +168,102 @@
 
 							<div class="main_nav_menu ml-auto">
 								<ul class="standard_dropdown main_nav_dropdown">
-									<li><a href="index.html">Trang chủ<i class="fas fa-chevron-down"></i></a></li>																								
-									<li><a href="cart.html">Giỏ hàng<i class="fas fa-chevron-down"></i></a></li>
+									<li>
+										<a href="shop.html">Tất cả sản phẩm
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
+									<li class="hassubs">
+										<a href="#">Nhà sản xuất
+											<i class="fas fa-chevron-down"></i>
+										</a>
+										<ul id="list01">
+											<li>
+												<a href="shop.html">Audi
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">BMW
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Chevrolet
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Ford
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Lexus
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Mercedes-Benz
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Nissan
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Toyota
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="hassubs">
+										<a href="#">Loại sản phẩm
+											<i class="fas fa-chevron-down"></i>
+										</a>
+										<ul id="list02">
+											<li>
+												<a href="shop.html">Năm 2018
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Năm 2017
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Năm 2016
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Năm 2015
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Năm 2014
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="shop.html">Năm 2013
+													<i class="fas fa-chevron-down"></i>
+												</a>
+											</li>
+										</ul>
+									</li>
+
+
+									<li>
+										<a href="contact.html">Liên hệ
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
 								</ul>
 							</div>
 
@@ -163,7 +273,11 @@
 								<div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
 									<div class="menu_burger">
 										<div class="menu_trigger_text">menu</div>
-										<div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+										<div class="cat_burger menu_burger_inner">
+											<span></span>
+											<span></span>
+											<span></span>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -173,12 +287,220 @@
 				</div>
 			</div>
 		</nav>
-		
+
 		<!-- Menu -->
 
+		<div class="page_menu">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+
+						<div class="page_menu_content">
+
+							<div class="page_menu_search">
+								<form action="#">
+									<input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
+								</form>
+							</div>
+							<ul class="page_menu_nav">
+								<li class="page_menu_item has-children">
+									<a href="#">Language
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="page_menu_selection">
+										<li>
+											<a href="#">English
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Italian
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Spanish
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Japanese
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Currency
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="page_menu_selection">
+										<li>
+											<a href="#">US Dollar
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">EUR Euro
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">GBP British Pound
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">JPY Japanese Yen
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="page_menu_item">
+									<a href="#">Home
+										<i class="fa fa-angle-down"></i>
+									</a>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Super Deals
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="page_menu_selection">
+										<li>
+											<a href="#">Super Deals
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li class="page_menu_item has-children">
+											<a href="#">Menu Item
+												<i class="fa fa-angle-down"></i>
+											</a>
+											<ul class="page_menu_selection">
+												<li>
+													<a href="#">Menu Item
+														<i class="fa fa-angle-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#">Menu Item
+														<i class="fa fa-angle-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#">Menu Item
+														<i class="fa fa-angle-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#">Menu Item
+														<i class="fa fa-angle-down"></i>
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">Menu Item
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Menu Item
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Menu Item
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Featured Brands
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="page_menu_selection">
+										<li>
+											<a href="#">Featured Brands
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Menu Item
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Menu Item
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Menu Item
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Trending Styles
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="page_menu_selection">
+										<li>
+											<a href="#">Trending Styles
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Menu Item
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Menu Item
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#">Menu Item
+												<i class="fa fa-angle-down"></i>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="page_menu_item">
+									<a href="blog.html">blog
+										<i class="fa fa-angle-down"></i>
+									</a>
+								</li>
+								<li class="page_menu_item">
+									<a href="contact.html">contact
+										<i class="fa fa-angle-down"></i>
+									</a>
+								</li>
+							</ul>
+
+							<div class="menu_contact">
+								<div class="menu_contact_item">
+									<div class="menu_contact_icon">
+										<img src="images/phone_white.png" alt="">
+									</div>+38 068 005 3570</div>
+								<div class="menu_contact_item">
+									<div class="menu_contact_icon">
+										<img src="images/mail_white.png" alt="">
+									</div>
+									<a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</header>
-
 	<!-- Contact Info -->
 	<!-- Contact Form -->
 
