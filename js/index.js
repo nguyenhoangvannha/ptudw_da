@@ -60,8 +60,7 @@ function createSliderItem(hinhAnh, alt, price, link, name, mark) {
                         </div>
                     </div>
                     <div class="product_extras">
-                        
-                        <button class="product_cart_button">Thêm vào giỏ hàng</button>
+                    <a href="javascript:void(0);" name="" id="" class="btn-buy" style="color: white" role="button"><button class="product_cart_button">Thêm vào giỏ hàng</button></a>
                     </div>
                 </div>
                 <ul class="product_marks">
