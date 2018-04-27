@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 	<link rel="stylesheet" type="text/css" href="styles/product_styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/product_responsive.css">
+	<link rel="stylesheet" type="text/css" href="styles/search.css">
 	<script src="js/site.js"></script>
 	<script src="js/product.js"></script>
 </head>
@@ -69,7 +70,7 @@
 						<div class="col-lg-2 col-sm-3 col-3 order-1">
 							<div class="logo_container">
 								<div class="logo">
-									<a href="#">Xe hơi FIT</a>
+									<a href="index.html">Xe Hơi FIT</a>
 								</div>
 							</div>
 						</div>
@@ -129,12 +130,12 @@
 						<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
 							<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
 								<!-- Cart -->
-								<div class="cart">
+								<div class="cart" id="cart-shop">
 									<div class="cart_container d-flex flex-row align-items-center justify-content-end">
 										<div class="cart_icon">
 											<img src="images/cart.png" alt="">
 											<div class="cart_count">
-												<span>0</span>
+												<span id="count-item" data-count="0">0</span>
 											</div>
 										</div>
 										<div class="cart_content">
@@ -582,7 +583,7 @@
 
 									<div class="product_price">$31950</div>
 									<div class="button_container">
-										<button type="button" class="button cart_button">Thêm vào giỏ hàng</button>
+											<a href="javascript:void(0);" name="" id="" class="btn btn-primary btn-buy" style="color: white" role="button">Thêm vào giỏ hàng</a>
 									</div>
 
 								</form>
@@ -918,6 +919,37 @@
 	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 	<script src="plugins/easing/easing.js"></script>
 	<script src="js/product_custom.js"></script>
+	<script>
+			$(document).on('click','.btn-buy',function (e) {
+				e.preventDefault();
+				var parent = $(this).parents('.container');
+				var cart = $(document).find('#cart-shop');
+					src = parent.find('img').attr('src');
+			
+				var parTop = parent.offset().top;
+				var parLeft = parent.offset().left;
+		
+				$('<img />', { 
+					  class: 'img-fly',
+					  src: src,
+					}).appendTo('body').css({
+						'top' : parTop,
+						'left' : parseInt(parLeft) + parseInt(parent.width()) - 50
+					});
+	
+				setTimeout(function(){
+					$(document).find('.img-fly').css({
+					'top' : cart.offset().top,
+					'left' : cart.offset().left
+				});
+					setTimeout(function(){
+						$(document).find('.img-fly').remove();
+						var citem = parseInt(cart.find('#count-item').data('count'))+1;
+						cart.find('#count-item').text(citem).data('count',citem);
+				},1000);	
+				},500);
+			});
+		</script>
 </body>
 
 </html>
