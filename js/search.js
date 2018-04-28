@@ -20,7 +20,7 @@ function createResultItem(name, image, price, des, year) {
       </h3>
       <div class="mb-1 text-muted">`+year+`</div>
       <p style="width: 400px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">`+des+`</p>
-      <a href="product.html">read more</a>
+      <a href="product.html">Chi tiết</a>
     </div>
     <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="`+name+`" style="width: 220px; height: 170px;" src="`+image+`" data-holder-rendered="true">
 
