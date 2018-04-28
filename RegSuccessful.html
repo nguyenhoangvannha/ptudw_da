@@ -43,17 +43,16 @@
 							</div>
 							<div class="top_bar_content ml-auto">
 								<div class="top_bar_user">
-								
-								<ul class="standard_dropdown main_nav_dropdown">
-									<li class="hassubs">
-										<a href="#"><div class="user_icon"><img src="images/user.svg" alt=""></div>Account Name<i class="fas fa-chevron-down"></i></a>
-										<ul>
-											<li><a href="ProfilePage.html">Quản lý tài khoản<i class="fas fa-chevron-down"></i></a></li>
-											<li><a href="index.html">Đăng xuất<i class="fas fa-chevron-down"></i></a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
+									<div class="user_icon">
+										<img src="images/user.svg" alt="">
+									</div>
+									<div>
+										<a href="SignLog.html">Đăng ký</a>
+									</div>
+									<div>
+										<a href="SignLog.html">Đăng nhập</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -70,7 +69,7 @@
 						<div class="col-lg-2 col-sm-3 col-3 order-1">
 							<div class="logo_container">
 								<div class="logo">
-									<a href="#">Xe hơi FIT</a>
+									<a href="index.html">Xe Hơi FIT</a>
 								</div>
 							</div>
 						</div>
@@ -87,31 +86,31 @@
 													<span class="custom_dropdown_placeholder clc">Tất cả danh mục</span>
 													<i class="fas fa-chevron-down"></i>
 													<ul id="dropDown01" class="custom_list clc">
-														<li>
+														<li onclick="location.href='search.html';">
 															<a class="clc" href="#">Tất cả danh mục</a>
 														</li>
-														<li>
+														<li onclick="location.href='search.html';">
 															<a class="clc" href="#">Audi</a>
 														</li>
-														<li>
+														<li onclick="location.href='search.html';">
 															<a class="clc" href="#">BMW</a>
 														</li>
-														<li>
+														<li onclick="location.href='search.html';">
 															<a class="clc" href="#">Chevrolet</a>
 														</li>
-														<li>
+														<li onclick="location.href='search.html';">
 															<a class="clc" href="#">Ford</a>
 														</li>
-														<li>
+														<li onclick="location.href='search.html';">
 															<a class="clc" href="#">Lexus</a>
 														</li>
-														<li>
+														<li onclick="location.href='search.html';">
 															<a class="clc" href="#">Mercedes-Benz</a>
 														</li>
-														<li>
+														<li onclick="location.href='search.html';">
 															<a class="clc" href="#">Nissan</a>
 														</li>
-														<li>
+														<li onclick="location.href='search.html';">
 															<a class="clc" href="#">Toyota</a>
 														</li>
 													</ul>
@@ -130,12 +129,12 @@
 						<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
 							<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
 								<!-- Cart -->
-								<div class="cart">
+								<div class="cart" id="cart-shop">
 									<div class="cart_container d-flex flex-row align-items-center justify-content-end">
 										<div class="cart_icon">
 											<img src="images/cart.png" alt="">
 											<div class="cart_count">
-												<span>0</span>
+												<span id="count-item" data-count="0">0</span>
 											</div>
 										</div>
 										<div class="cart_content">
@@ -517,12 +516,12 @@
 		<div style="margin-top: 60px;">
 
 		</div>
-		
-	<div class="account">
-		<p align="center" style="font-size: 200%"> Account successfully created.</p>
-	</div>
+
+		<div class="account">
+			<p align="center" style="font-size: 200%"> Account successfully created.</p>
+		</div>
 		<!-- Hot New Arrivals -->
-		
+
 		<div style="margin-top: 60px;">
 
 		</div>
